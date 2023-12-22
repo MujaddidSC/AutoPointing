@@ -79,7 +79,7 @@ function get_acme_domain() {
     sleep 3
 }
 ns_domain_cloudflare() {
-    wget https://github.com/takbebeh/AutoPointing/raw/main/cfnsdomain.sh >/dev/null 2>&1 && chmod +x cfnsdomain.sh && ./cfnsdomain.sh >/dev/null 2>&1
+    wget https://github.com/MujaddidSC/AutoPointing/raw/main/cfnsdomain.sh >/dev/null 2>&1 && chmod +x cfnsdomain.sh && ./cfnsdomain.sh >/dev/null 2>&1
     NSVPSKU=$(cat /etc/xray/dns)
     sleep 3
     sed -i "s/$NS/$NSVPSKU/g" /etc/systemd/system/client.service >/dev/null 2>&1
@@ -104,7 +104,7 @@ function renew_domain() {
 
 cloudflare() {
     echo -e "   [${ORANGE}INFO${NC}] ${CYAN}Data sedang diprogres mohon tunggu sebentar${NC} "
-    wget https://github.com/takbebeh/AutoPointing/raw/main/cfdomain.sh >/dev/null 2>&1 && chmod +x cfdomain.sh && ./cfdomain.sh >/dev/null 2>&1
+    wget https://github.com/MujaddidSC/AutoPointing/raw/main/cfdomain.sh >/dev/null 2>&1 && chmod +x cfdomain.sh && ./cfdomain.sh >/dev/null 2>&1
     get_acme_domain
     ns_domain_cloudflare
 }
